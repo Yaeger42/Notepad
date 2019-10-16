@@ -93,7 +93,6 @@ class SubS
             {
                 //Add the printing of the whole pattern here
                 System.out.printf("pattern occurs at shift = %d\n",s);
-                System.out.println("s = " + s);
                 s += shift[0];
 
             }

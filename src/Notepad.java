@@ -168,7 +168,7 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
             textToSearch = searchText.getText().toCharArray();
             textInScreen = txt.getText().toCharArray();
             subs.search(textInScreen, textInScreen);
-            foundText.setText("Found: ",subs.search(textInScreen, textToSearch));
+            //foundText.setText("Found: ",subs.search(textInScreen, textToSearch));
         }
     }
 
