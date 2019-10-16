@@ -10,6 +10,9 @@ import java.util.Scanner;
  * @author s1gma
  */
 public class Notepad extends JFrame implements ActionListener {//  like it can use all the
+    char [] textToSearch;
+    char [] textInScreen;
+    char [] result;
     private JTextArea txt = new JTextArea(); // basically i had to make it local so that it could be used in more than 1 method yh i see thnx for explaining :d
     JFileChooser chooser;
     private JMenuBar newMenubar() {
@@ -151,6 +154,7 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
 
         }
         else if(cmd.equals("Search")){
+            SubS subs = new SubS();
             JFrame searchFrame = new JFrame();
             JTextField searchText = new JTextField(20 );
             JTextField foundText = new JTextField(20);
@@ -161,6 +165,10 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
             searchFrame.add(searchButton);
             searchFrame.add(foundText);
             searchFrame.setLayout(new FlowLayout());
+            textToSearch = searchText.getText().toCharArray();
+            textInScreen = txt.getText().toCharArray();
+            subs.search(textInScreen, textInScreen);
+            foundText.setText("Found: ",subs.search(textInScreen, textToSearch));
         }
     }
 
