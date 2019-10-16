@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
@@ -148,6 +149,18 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
                 }
             }
 
+        }
+        else if(cmd.equals("Search")){
+            JFrame searchFrame = new JFrame();
+            JTextField searchText = new JTextField(20 );
+            JTextField foundText = new JTextField(20);
+            searchFrame.setVisible(true);
+            searchFrame.setSize(300, 300);
+            searchFrame.add(searchText);
+            JButton searchButton = new JButton("Search");
+            searchFrame.add(searchButton);
+            searchFrame.add(foundText);
+            searchFrame.setLayout(new FlowLayout());
         }
     }
 
