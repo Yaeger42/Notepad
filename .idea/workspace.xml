@@ -4,6 +4,7 @@
     <list default="true" id="c3fa40fe-81ee-4ac8-8f55-ae61807748b0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notepad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SubS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubS.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571103148220</updated>
       <workItem from="1571103153178" duration="10800000" />
+      <workItem from="1571274303146" duration="6337000" />
     </task>
     <task id="LOCAL-00001" summary="Search Window added">
       <created>1571241880803</created>
@@ -103,7 +105,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

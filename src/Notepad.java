@@ -6,49 +6,39 @@ import java.io.*;
 import java.io.FileFilter;
 import java.util.Scanner;
 
-/**
- * @author s1gma
- */
-public class Notepad extends JFrame implements ActionListener {//  like it can use all the
+
+public class Notepad extends JFrame implements ActionListener {
     char [] textToSearch;
     char [] textInScreen;
     char [] result;
-    private JTextArea txt = new JTextArea(); // basically i had to make it local so that it could be used in more than 1 method yh i see thnx for explaining :d
     JFileChooser chooser;
+    private JTextArea txt = new JTextArea();
     private JMenuBar newMenubar() {
-        JMenuBar menubar = new JMenuBar(); //Sets up the menubar
-        String[] titles = {"File", "Search"};    // leave lol ok
-        String[][] elements = {{"New", "Open", "Save as","Save"}, {"Search"}};   //allready there lol ok go :d k lol
-        for(int i = 0; i < titles.length; i++) { // basically loops through the menu titles
-            String title = titles[i]; // selects the titles from the loop
-            String[] elems = elements[i];//basically finds the menuitems for the menu
-            menubar.add(newMenu(title, elems)); // adds a new menu with the title and elements, u understand? lhl yes ;d
-            //Okay now we add the menu to the frame and we will boot it up
-
+        JMenuBar menubar = new JMenuBar();
+        String[] titles = {"File", "Search"};
+        String[][] elements = {{"New", "Open", "Save as","Save"}, {"Search"}};
+        for(int i = 0; i < titles.length; i++) {
+            String title = titles[i];
+            String[] elems = elements[i];
+            menubar.add(newMenu(title, elems));
         }
-        return menubar;//Returns the menubar ok
+        return menubar;
     }
 
-    /**
-     *
-     * @param title The title like "File"
-     * @param elements  The elements like "New", "Load", "Save"
-     * @return  returns the JMenu that you make o
-     */
     private JMenu newMenu(String title, String[] elements) {
-        JMenu menu = new JMenu(title); //Creates a new JMenu with the title ik
-        for(String element : elements) { //u understand?yes :d
-            JMenuItem menuitem = new JMenuItem(element);//already told you about this :Pok
-            menu.add(menuitem); // uses the add method in the JMenu class for our menu to add them menuitems yh ok :d
-            menuitem.addActionListener(this);//makes it so that the menuitems respond to the actionlistenerok
+        JMenu menu = new JMenu(title);
+        for(String element : elements) {
+            JMenuItem menuitem = new JMenuItem(element);
+            menu.add(menuitem);
+            menuitem.addActionListener(this);
         }
         return menu;
     }
 
     private Notepad() {
-        setTitle("untitled");  //Wanna add the title thing now? k we'll do it now
+        setTitle("untitled");
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());  //basically gives it the system themeik
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
         catch (ClassNotFoundException e) {
             e.printStackTrace();
@@ -64,10 +54,8 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
         }
         setSize(800, 600); // straight forward lol
         setJMenuBar(newMenubar());
-        JScrollPane scroller = new JScrollPane(txt);//it has the txt(JTextArea) in it to select what its the container fork
-        add(scroller); // adds the scroller which has the text area in it.ok
-        //Now this is where we have to make a menubar for files, i'll show you a nice way to do menus.ok
-        //what else was i going to add?scrollbar oh yeah
+        JScrollPane scroller = new JScrollPane(txt);
+        add(scroller);
     }
 
     public static void main(String[] args) {
@@ -75,49 +63,44 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
     }
 
     public void saveAs(){
-        JFileChooser chooser = new JFileChooser(); // sets up the file choosing dialog. ok
-        int option = chooser.showSaveDialog(this); // Shows the save dialog and is the option for what you've clicked
-        if(option == JFileChooser.APPROVE_OPTION) {   //if you've pressed the ok or save button or w/e do somethingok
-            //also stop pressing o when i press control, it's frustrating l0lklol
+        JFileChooser chooser = new JFileChooser();
+        int option = chooser.showSaveDialog(this);
+        if(option == JFileChooser.APPROVE_OPTION) {
             try {
                 BufferedWriter buf = new BufferedWriter(new FileWriter(chooser.getSelectedFile().getAbsolutePath()));
-                //^ Basically the bufferedwriter is something used for writing to a file along with filewriter
-                // yeah and the chooser.getSelectedFile().getAbsolutePath() basically finds the place in the filechooserik
-                //and writes to it.
-                buf.write(txt.getText()); // basically this gets the text in the text area and writes it to the file
-                setTitle(chooser.getSelectedFile().getName()); //this basically gets the file name in the chooser. rofl thisi s easy lol :d thnx, i told you it wasnt hard :Pyh
-                buf.close(); // closes the stream for memory purposesk, now we can run it
+                buf.write(txt.getText());
+                setTitle(chooser.getSelectedFile().getName());
+                buf.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
     public void Open(){
-        chooser = new JFileChooser(); // filechooser object
+        chooser = new JFileChooser();
         chooser.setFileFilter(new Filter());
-        int option = chooser.showOpenDialog(this); // same as before but with open this time. ok w8
+        int option = chooser.showOpenDialog(this);
         if(option == JFileChooser.APPROVE_OPTION) {
             try {
-                Scanner scanner = new Scanner(chooser.getSelectedFile()); // gets the selected file from chooser
-                while(scanner.hasNext()) { // When the scanner still has stuff to read, do something
-                    String data = scanner.nextLine(); // Read lines inside the scanner
-                    txt.setText(data); // Puts the data it read from the file into the text area.k
+                Scanner scanner = new Scanner(chooser.getSelectedFile());
+                while(scanner.hasNext()) {
+                    String data = scanner.nextLine();
+                    txt.setText(data);
                 }
                 setTitle(chooser.getSelectedFile().getName());
-                //Problem is i havent used file filter in a while so i mite do something wrong. ok
-                scanner.close(); // close the scanner for memory purposes.
+                scanner.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
         }
 
     }
-    //This shit here is for later to make the buttons and shit work. i know :d fk don't delete this class sent over msn soon :d
+
     public void actionPerformed(ActionEvent actionEvent) {
         String [] fileName;
         File file = new File("/home/yaeger/Documents/Java");
-        String cmd = actionEvent.getActionCommand(); // basically retrieves what you've clickedok
-        if(cmd.equals("Save as")) { // If the button pressed has the text "Save" on it do something inside.
+        String cmd = actionEvent.getActionCommand();
+        if(cmd.equals("Save as")) {
             saveAs();
 
         } else if(cmd.equals("Open")) {
@@ -125,15 +108,12 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
         }
 
         else if(cmd.equals("New")){
-            //MAke a new text field and close the other one
+
             txt.setText("");
         }
 
         else if(cmd.equals("Save")){
-            //Get the title from the current directory in a list :)
-            //Traverse the niccccce list
-            //if equals, save the shit
-            //Con open volverlo a usar aqui
+
             if(chooser == null){
                 //Create a new file
                 saveAs();
@@ -141,12 +121,9 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
             else{
                 try {
                     BufferedWriter buf = new BufferedWriter(new FileWriter(chooser.getSelectedFile().getAbsolutePath()));
-                    //^ Basically the bufferedwriter is something used for writing to a file along with filewriter
-                    // yeah and the chooser.getSelectedFile().getAbsolutePath() basically finds the place in the filechooserik
-                    //and writes to it.
-                    buf.write(txt.getText()); // basically this gets the text in the text area and writes it to the file
-                    setTitle(chooser.getSelectedFile().getName()); //this basically gets the file name in the chooser. rofl thisi s easy lol :d thnx, i told you it wasnt hard :Pyh
-                    buf.close(); // closes the stream for memory purposesk, now we can run it
+                    buf.write(txt.getText());
+                    setTitle(chooser.getSelectedFile().getName());
+                    buf.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -165,10 +142,16 @@ public class Notepad extends JFrame implements ActionListener {//  like it can u
             searchFrame.add(searchButton);
             searchFrame.add(foundText);
             searchFrame.setLayout(new FlowLayout());
-            textToSearch = searchText.getText().toCharArray();
-            textInScreen = txt.getText().toCharArray();
-            subs.search(textInScreen, textInScreen);
-            //foundText.setText("Found: ",subs.search(textInScreen, textToSearch));
+            searchButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent actionEvent) {
+                    textToSearch = searchText.getText().toCharArray();
+                    textInScreen = txt.getText().toCharArray();
+                    foundText.setText("Found: " + subs.search(textInScreen, textToSearch));
+                }
+            });
+
+
         }
     }
 
