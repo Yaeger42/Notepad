@@ -1,4 +1,8 @@
 import javax.swing.*;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.Document;
+import javax.swing.text.Highlighter;
+import javax.swing.text.JTextComponent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -167,3 +171,52 @@ public class Notepad extends JFrame implements ActionListener {
         }
     }
 }
+
+/*
+
+Highlight something OF SOMETHING
+
+
+
+
+
+class MyHighlightPainter extends DefaultHighlighter.DefaultHighlighter{
+    public MyHighlightPainter(Color color){
+        super(color);
+    }
+}
+
+    Highlighter.HighlightPainter myHighLightPainter = (Highlighter.HighlightPainter) new MyHighlightPainter(Color.yellow);
+
+    public void removeHighlights(JTextField textComp){
+        Highlighter hilite = textComp.getHighlighter();
+        Highlighter.Highlight [] unhighlight = hilite.getHighlights();
+        for(int i = 0; i<unhighlight.length; i++){
+            if(unhighlight[i].getPainter().instanceOf(MyHighlightPainter)){
+                hilite.removeHighlights(unhighlight[i]);
+            }
+        }
+    }
+
+    public void highlight(JTextComponent textComp, String pattern){
+        removeHighlights(textComp);
+
+        try{
+
+            Highlighter hilite = textComp.getHighlighter();
+            Document doc = textComp.getDocument();
+            String text = doc.getText(0, doc.getLength());
+            int pos = 0;
+            while((pos = text.toUpperCase().indexOf(pattern.toUpperCase(), pos)) >=0){
+
+                hilite.addHighlight(pos, pos+pattern.length(), myHighLightPainter);
+                pos += pattern.length();
+            }
+
+        }catch(Exception e){
+
+        }
+
+ }
+
+ */

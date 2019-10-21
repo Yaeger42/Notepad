@@ -81,7 +81,7 @@ class SubS
 
     public static void main(String[] args)
     {
-        char []text = "ABAAAABAACD".toCharArray();
+        char []text = "ABAAAABAACD ABAACZ DAJKM".toCharArray();
         char []pat = "ABAACZ".toCharArray();
         search(text, pat);
     }

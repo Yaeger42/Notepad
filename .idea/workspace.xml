@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c3fa40fe-81ee-4ac8-8f55-ae61807748b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notepad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SubS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SubS.java" afterDir="false" />
@@ -32,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,7 +54,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Notepad">
+  <component name="RunManager" selected="Application.SubS">
     <configuration name="Notepad" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Notepad" />
       <module name="Notepad" />
@@ -69,8 +71,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Notepad" />
         <item itemvalue="Application.SubS" />
+        <item itemvalue="Application.Notepad" />
       </list>
     </recent_temporary>
   </component>
