@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3fa40fe-81ee-4ac8-8f55-ae61807748b0" name="Default Changelist" comment="">
+    <list default="true" id="c3fa40fe-81ee-4ac8-8f55-ae61807748b0" name="Default Changelist" comment="Two highlighters that seem to work better below">
       <change beforePath="$PROJECT_DIR$/src/Notepad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notepad.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571675683352</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Two highlighters that seem to work better below">
+      <created>1571676187800</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1571676187800</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +129,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Search Window added" />
     <MESSAGE value="Highlighter added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Highlighter added." />
+    <MESSAGE value="Two highlighters that seem to work better below" />
+    <option name="LAST_COMMIT_MESSAGE" value="Two highlighters that seem to work better below" />
   </component>
 </project>

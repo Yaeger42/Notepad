@@ -219,7 +219,7 @@ class MyHighlightPainter extends DefaultHighlighter.DefaultHighlighter{
 
  }
 
- --------------------------------ANOTHER APPROACH ------------------------
+ --------------------------------ANOTHER APPROACH ------------------------ Extra CRAP correcting the first
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.*;
 import javax.swing.text.*;
